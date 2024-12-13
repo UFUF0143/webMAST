@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap');
+
+
+* {
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html {
+    overflow-y: scroll; /* Сохраняет вертикальную прокрутку */
+    scroll-behavior: smooth; /* Включает плавное прокручивание */
+}
+    
+::-webkit-scrollbar {
+    display: none; /* Скрывает полосу прокрутки в браузерах на основе WebKit (Chrome, Safari) */
+}
+    
+body {
+    -ms-overflow-style: none; /* Скрывает полосу прокрутки в Internet Explorer */
+}
+.header-section {
+    display: flex; /* Устанавливает flex-контейнер */
+    justify-content: space-between; /* Разделяет элементы по горизонтали */
+    align-items: center; /* Выравнивает элементы по вертикали */
+    padding: 10px 30px; /* Отступы внутри header */
+    
+}
+
+.header-leftside, 
+.header-centerside, 
+.header-rightside {
+    display: flex; /* Делаем содержимое каждого блока flex-элементами */
+    align-items: center; /* Выравниваем по вертикали */
+}
+
+.header-navigation-center {
+    display: flex; /* Горизонтальный список ссылок */
+    gap: 20px; /* Расстояние между ссылками */
+}
+
+.header-navigation-center a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: black; /* Цвет текста */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Анимация при наведении */
+}
+
+.header-navigation-center a:hover {
+    color: #068a9d; /* Изменение цвета при наведении */
+}
+
+.header-rightside {
+    display: flex; /* Гибкий контейнер для элементов справа */
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+.phone-and-socials {
+    display: flex; /* Расположение номера и соцсетей в одну строку */
+    align-items: center; /* Выравнивание по вертикали */
+    gap: 15px; /* Расстояние между номером телефона и соцсетями */
+}
+
+.phone-number {
+    font-size: 16px;
+    color: #333;
+}
+
+.socials {
+    display: flex; /* Иконки соцсетей в одну строку */
+    gap: 10px; /* Расстояние между иконками */
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+}
+
+.socials img {
+    width: 30px; /* Размер иконок */
+    height: 30px;
+    transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+.socials img:hover {
+    transform: scale(1.1); /* Увеличение иконки при наведении */
+}
+
+.imag-logo{
+    width: 200px;
+}
+
+
+
+
+
+/* Общие стили для секции */
+.courses-section {
+    padding: 50px 20px;
+}
+
+.courses-conteiner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Заголовок и подзаголовок */
+.courses-text {
+    margin-bottom: 40px;
+}
+
+.title-courses {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.suptitle-courses {
+    font-size: 24px;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Стили для первого курса */
+.cours-first {
+    position: relative;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.cours-second {
+    position: relative;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.cours-third {
+    position: relative;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Фоновое изображение */
+.imag-background-cours {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    z-index: 1;
+}
+
+/* Левая часть курса */
+.cours-left {
+    flex: 1;
+    padding: 30px;
+    text-align: left;
+    color: #fff;
+    z-index: 2;
+}
+
+.title-cours {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.title-cours-master {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.suptitle-cours,
+.time-cours {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Правая часть курса */
+.cours-right {
+    flex: 1;
+    padding: 30px;
+    z-index: 2;
+}
+
+.cours-warp {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: #fff;
+}
+
+.cours-parag {
+    font-size: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.cours-parag::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+    font-size: 20px;
+}
+
+
+
+/* Базовые стили для модальных окон */
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content, .enroll-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.modal-content button, .enroll-form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover, .enroll-form button:hover {
+    background-color: #0056b3;
+}
+
+.modal .btn-close {
+    background-color: red;
+    color: white;
+    margin-top: 20px;
+}
+
+
+/* Базовые стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Тёмный полупрозрачный фон */
+    z-index: 1000;
+}
+
+/* Содержимое модального окна */
+.modal-content, .enroll-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Тень для выделения окна */
+}
+
+/* Кнопки в модальном окне */
+.modal-content button, .enroll-form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:hover, .enroll-form button:hover {
+    background-color: #0056b3;
+}
+
+.modal .btn-close {
+    background-color: #FF4D4D;
+    color: white;
+    margin-top: 20px;
+    font-size: 14px;
+}

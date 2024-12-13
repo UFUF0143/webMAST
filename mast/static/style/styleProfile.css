@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap');
+
+
+* {
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    margin-top: 20px;
+    display: flex;
+	min-height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(../media/background-login.jpeg) no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+html {
+    overflow-y: scroll; /* Сохраняет вертикальную прокрутку */
+    scroll-behavior: smooth; /* Включает плавное прокручивание */
+}
+    
+::-webkit-scrollbar {
+    display: none; /* Скрывает полосу прокрутки в браузерах на основе WebKit (Chrome, Safari) */
+}
+    
+body {
+    -ms-overflow-style: none; /* Скрывает полосу прокрутки в Internet Explorer */
+}
+.footer-account{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    color: white;
+}
+.font-weight-bold.py-3.mb-4 a{
+    color:white;
+    font-weight: bold;
+}
+
+.ui-w-80 {
+    width : 80px !important;
+    height: auto;
+}
+
+.btn-default {
+    border-color: rgba(24, 28, 33, 0.1);
+    background  : rgba(0, 0, 0, 0);
+    color       : #4E5155;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+.btn.btn-primary {
+    color: #fff;
+    background-color: #7140f4;
+    border-color: #7140f4;
+}
+
+.btn.btn-default{
+    color:white;
+}
+
+.btn {
+    cursor: pointer;
+}
+.form-label{
+    color:white;
+}
+
+
+.card.overflow-hidden {
+    background-clip: padding-box;
+    box-shadow     : 0 1px 4px rgba(24, 28, 33, 0.012);
+    background: transparent;
+    backdrop-filter: blur(50px);
+    border: 2px solid rgba(255, 255, 255, .2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+.list-group-item-action{
+    color: white;
+}
+.account-settings-fileinput {
+    position  : absolute;
+    visibility: hidden;
+    width     : 1px;
+    height    : 1px;
+    opacity   : 0;
+}
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.account-settings-multiselect~.select2-container {
+    width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: white !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #7140f4 !important;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: white !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #7140f4 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: white !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #fff !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: white !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: white !important;
+}
+.list-group-item.list-group-item-action{
+    background: transparent;
+    backdrop-filter: blur(50px);
+    color: white;
+}
+.list-group-item.list-group-item-action:hover{
+    background: transparent;
+    backdrop-filter: blur(50px);
+    color: white;
+}
+.mb-4{
+    color: white;
+}
+.switcher-label{
+    color: white;
+}
+
+.form-control{
+    background: transparent !important;
+    border: 2px solid rgba(255, 255, 255, .2) !important;
+    border-radius: 40px !important;
+    font-size: 16px !important;
+    color: #fff !important;
+}
+.custom-select{
+    background: transparent !important;
+    border: 2px solid rgba(255, 255, 255, .2) !important;
+    border-radius: 40px !important;
+    font-size: 16px !important;
+    color: #fff !important;
+}
+option{
+    color:#4E5155;
+}
+.switcher-input{
+    background-color: white;
+}
+.alert-warning {
+    background-color: rgba(191, 97, 247, 0.5)!important;
+    border: 2px solid rgba(255, 255, 255, .2) !important;
+    border-radius: 40px !important;
+    font-size: 16px !important;
+    color: #fff !important;
+}
+.alert-warning a{
+    color: white;
+    font-weight: bold;
+}
+.alert-warning a:hover{
+    color: white;
+}

@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap');
+
+
+* {
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+html {
+    overflow-y: scroll; /* Сохраняет вертикальную прокрутку */
+    scroll-behavior: smooth; /* Включает плавное прокручивание */
+}
+    
+::-webkit-scrollbar {
+    display: none; /* Скрывает полосу прокрутки в браузерах на основе WebKit (Chrome, Safari) */
+}
+    
+body {
+    -ms-overflow-style: none; /* Скрывает полосу прокрутки в Internet Explorer */
+}
+h1{
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+
+.header-section {
+    display: flex; /* Устанавливает flex-контейнер */
+    justify-content: space-between; /* Разделяет элементы по горизонтали */
+    align-items: center; /* Выравнивает элементы по вертикали */
+    padding: 10px 30px; /* Отступы внутри header */
+    
+}
+
+.header-leftside, 
+.header-centerside, 
+.header-rightside {
+    display: flex; /* Делаем содержимое каждого блока flex-элементами */
+    align-items: center; /* Выравниваем по вертикали */
+}
+
+.header-navigation-center {
+    display: flex; /* Горизонтальный список ссылок */
+    gap: 20px; /* Расстояние между ссылками */
+}
+
+.header-navigation-center a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: black; /* Цвет текста */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Анимация при наведении */
+}
+
+.header-navigation-center a:hover {
+    color: #068a9d; /* Изменение цвета при наведении */
+}
+
+.header-rightside {
+    display: flex; /* Гибкий контейнер для элементов справа */
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+.phone-and-socials {
+    display: flex; /* Расположение номера и соцсетей в одну строку */
+    align-items: center; /* Выравнивание по вертикали */
+    gap: 15px; /* Расстояние между номером телефона и соцсетями */
+}
+
+.phone-number {
+    font-size: 16px;
+    color: #333;
+}
+
+.socials {
+    display: flex; /* Иконки соцсетей в одну строку */
+    gap: 10px; /* Расстояние между иконками */
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+}
+
+.socials img {
+    width: 30px; /* Размер иконок */
+    height: 30px;
+    transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+.socials img:hover {
+    transform: scale(1.1); /* Увеличение иконки при наведении */
+}
+
+.imag-logo{
+    width: 200px;
+}
+
+
+
+
+
+.greetings-section {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+}
+
+.greet-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Масштабирует изображение, сохраняя его пропорции */
+    z-index: -1; /* Размещает изображение позади текста */
+}
+
+.greetings-conteiner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Центровка по горизонтали */
+    align-items: center; /* Центровка по вертикали */
+    text-align: center; /* Центровка текста */
+}
+
+.text_greet .title_greet {
+    color: white;
+    font-size: 68px;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень для лучшей читаемости */
+}
+
+
+
+
+
+.about-sectoin {
+    position: relative; /* Для размещения текста поверх картинки */
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Текст остается в верхней части */
+}
+
+.about-conteiner {
+    position: relative; /* Устанавливаем родительский контейнер как область для позиционирования */
+    width: 100%;
+    max-height: 1000px;
+    height: 100%;
+    margin-bottom: 100px;
+}
+
+.about-imag {
+    position: relative;
+}
+
+.img-about {
+    display: flex;
+    justify-content: center; /* Центрируем изображение горизонтально */
+    align-items: center; /* Центрируем вертикально (если нужно) */
+    width: 100%;
+    margin: 0 auto; /* Устанавливаем автоматические отступы для выравнивания */
+    max-width: 1400px; /* Максимальная ширина изображения */
+    margin-top: 20px;
+}
+
+.about-text {
+    position: absolute; /* Абсолютное позиционирование текста */
+    margin-top: 30px; /* Расстояние от верхнего края */
+    margin-left: 50px; /* Расстояние от левого края */
+    max-width: 800px; /* Ограничение ширины текста */
+    z-index: 2; /* Размещаем текст поверх изображения */
+}
+
+.title-about {
+    font-size: 2rem; /* Размер заголовка */
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.suptitle-about {
+    font-size: 1rem; /* Размер подзаголовка */
+    line-height: 1.5;
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+.masters-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 120px;
+
+}
+
+.masters-conteiner {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.masters-text {
+    margin-bottom: 60px;
+}
+
+.title-masters {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.suptitle-masters {
+    font-size: 24px;
+    padding: 0 80px;
+    
+}
+
+.masters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-masters {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-masters li {
+    flex: 1;
+    text-align: center;
+}
+
+.imag-master {
+    width: 300px; /* Уменьшение размера изображений */
+    height: 300px;
+    border-radius: 10%;
+    
+    margin-bottom: 10px;
+}
+
+.name-master {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.suptitle-master {
+    max-width: 300px;
+    width: 100%;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 0 10px;
+}
+
+
+
+
+
+/* Общие стили для секции */
+.courses-section {
+    padding: 50px 20px;
+}
+
+.courses-conteiner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Заголовок и подзаголовок */
+.courses-text {
+    margin-bottom: 40px;
+}
+
+.title-courses {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.suptitle-courses {
+    font-size: 24px;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Стили для первого курса */
+.cours-first {
+    position: relative;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.cours-second {
+    position: relative;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.cours-third {
+    position: relative;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Фоновое изображение */
+.imag-background-cours {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    z-index: 1;
+}
+
+/* Левая часть курса */
+.cours-left {
+    flex: 1;
+    padding: 30px;
+    text-align: left;
+    color: #fff;
+    z-index: 2;
+}
+
+.title-cours {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.title-cours-master {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.suptitle-cours,
+.time-cours {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Правая часть курса */
+.cours-right {
+    flex: 1;
+    padding: 30px;
+    z-index: 2;
+}
+
+.cours-warp {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: #fff;
+}
+
+.cours-parag {
+    font-size: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.cours-parag::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
+
+.present-section {
+    padding: 50px 20px;
+}
+
+.present-conteiner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.text-present {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+.title-present {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.suptitle-present {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.kit-present {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+.text-kit {
+    flex: 1;
+}
+
+.title-kit {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.elements-kit {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.elements-kit .element::before {
+    content: '✔';
+    color: #007BFF;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.suptitle-kit {
+    font-size: 1rem;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.imag-kit {
+    flex: 1;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    
+}
+
+
+
+
+.record-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+    margin-bottom: 50px;
+
+}
+
+.record-conteiner {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.title-record {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.but-record {
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    border: 3px solid #6a11cb; /* Фиолетовый бордер */
+    border-radius: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.but-record:hover {
+    transform: scale(1.1); /* Легкое увеличение */
+    box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3); /* Тень при наведении */
+}
+
+
+
+
+
+footer {
+    background-color: #a068f8;
+    color: white;
+    padding: 20px 30px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-conteiner {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-conection,
+.footer-address {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+}
+.phone-number-footer{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.title-con,
+.title-address {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.nav:hover {
+    text-decoration: underline;
+}
+
+
+.logo-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.footer-center hr {
+    border: 0;
+    height: 2px;
+    background: white;
+    margin: 20px 0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+

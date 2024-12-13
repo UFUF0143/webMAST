@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap');
+
+
+* {
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+h1{
+    font-family: "Jura", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+
+.header-section {
+    display: flex; /* Устанавливает flex-контейнер */
+    justify-content: space-between; /* Разделяет элементы по горизонтали */
+    align-items: center; /* Выравнивает элементы по вертикали */
+    padding: 10px 30px; /* Отступы внутри header */
+    background-color: #f9f9f9; /* Фон для наглядности */
+}
+
+.header-leftside, 
+.header-centerside, 
+.header-rightside {
+    display: flex; /* Делаем содержимое каждого блока flex-элементами */
+    align-items: center; /* Выравниваем по вертикали */
+}
+
+.header-navigation-center {
+    display: flex; /* Горизонтальный список ссылок */
+    gap: 20px; /* Расстояние между ссылками */
+}
+
+.header-navigation-center a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: black; /* Цвет текста */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Анимация при наведении */
+}
+
+.header-navigation-center a:hover {
+    color: #068a9d; /* Изменение цвета при наведении */
+}
+
+.header-rightside {
+    display: flex; /* Гибкий контейнер для элементов справа */
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+.phone-and-socials {
+    display: flex; /* Расположение номера и соцсетей в одну строку */
+    align-items: center; /* Выравнивание по вертикали */
+    gap: 15px; /* Расстояние между номером телефона и соцсетями */
+}
+
+.phone-number {
+    font-size: 16px;
+    color: #333;
+}
+
+.socials {
+    display: flex; /* Иконки соцсетей в одну строку */
+    gap: 10px; /* Расстояние между иконками */
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+}
+
+.socials img {
+    width: 30px; /* Размер иконок */
+    height: 30px;
+    transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+.socials img:hover {
+    transform: scale(1.1); /* Увеличение иконки при наведении */
+}
+
+.imag-logo{
+    width: 200px;
+}
+

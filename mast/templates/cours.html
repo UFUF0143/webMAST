@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="shortcut icon" href="https://static.tildacdn.com/img/tildafavicon.ico" type="image/x-icon">
+    <title>Обучение | Академия MAST</title>
+</head>
+<body>
+    <header>
+        <section class="header-section">
+
+        </section>
+    </header>
+    <section id="courses" class="courses-section">
+        <div class="courses-conteiner">
+            <div class="courses-text">
+                <h1 class="title-courses">КУРСЫ</h1>
+                <p class="suptitle-courses">В академии MAST представлены три онлайн-курса, которые помогут вам освоить искусство татуировки с нуля или развить существующие навыки.</p>
+            </div>
+            <div class="courses">
+                <!-- Первый курс -->
+                <div class="cours-first">
+                    <img class="imag-background-cours" src="../static/media/background-cours-first.jpeg" alt="">
+                    <div class="cours-left">
+                        <h1 class="title-cours">Первый курс: Мастерство с нуля</h1>
+                        <h1 class="title-cours-master"> Ведущий преподаватель: Максим Пигментов</h1>
+                        <p class="suptitle-cours">Курс для начинающих...</p>
+                        <p class="time-cours">Длительность курса: 6 видеоуроков по 50+ минут.</p>
+                    </div>
+                    <div class="cours-right">
+                        <ul class="cours-warp">
+                            <li class="cours-parag">Освоение оборудования</li>
+                            <li class="cours-parag">Гигиена и безопасность</li>
+                            <li class="cours-parag">Создание контура</li>
+                        </ul>
+                        <div class="course-actions">
+                        <!-- Кнопка для записи -->
+                            <button class="btn-enroll" data-course="1">Записаться на курс</button>
+
+                            <!-- Модальное окно для ввода данных -->
+                            <div id="modal-enroll-1" class="modal">
+                                <form class="enroll-form" data-course="1">
+                                    <h2>Запись на курс</h2>
+                                    <label>
+                                        Имя и Фамилия
+                                        <input type="text" name="name" placeholder="Введите имя и фамилию" required>
+                                    </label>
+                                    <label>
+                                        Номер телефона
+                                        <input type="tel" name="phone" placeholder="Введите номер телефона" required>
+                                    </label>
+                                    <label>
+                                        Почта
+                                        <input type="email" name="email" placeholder="Введите почту" required>
+                                    </label>
+                                    <button type="submit">Отправить</button>
+                                    <button type="button" class="btn-close">Закрыть</button>
+                                </form>
+                            </div>
+
+                            <!-- Модальное окно подтверждения -->
+                            <div id="modal-success-1" class="modal">
+                                <div class="modal-content">
+                                    <h2>Поздравляем!</h2>
+                                    <p>Ждите подтверждения администратора.</p>
+                                    <button class="btn-close">Закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Второй курс -->
+                <div class="cours-second">
+                    <!-- Остальная информация курса аналогична -->
+                    <div class="course-actions">
+                        <button class="btn-enroll" data-course="2">Записаться на курс</button>
+                        <!-- Модальные окна, как у первого курса -->
+                    </div>
+                </div>
+                <!-- Третий курс -->
+                <div class="cours-third">
+                    <!-- Остальная информация курса аналогична -->
+                    <div class="course-actions">
+                        <button class="btn-enroll" data-course="3">Записаться на курс</button>
+                        <!-- Модальные окна, как у первого курса -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'scripts/enroll.js' %}"></script>
+    
+</body>
+</html>
