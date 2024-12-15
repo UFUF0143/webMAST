@@ -1,50 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const buttonsEnroll = document.querySelectorAll('.btn-enroll');
-    const modals = document.querySelectorAll('.modal');
-    const forms = document.querySelectorAll('.enroll-form');
+document.addEventListener("DOMContentLoaded", function() {
+    let selectedCourseId = null;
 
-    // Открытие модального окна для записи
-    buttonsEnroll.forEach(button => {
-        button.addEventListener('click', () => {
-            const courseId = button.dataset.course;
-            const modal = document.getElementById(`modal-enroll-${courseId}`);
-            modal.style.display = 'flex'; // Показываем модальное окно
+    // Открытие модального окна и сохранение выбранного курса
+    document.querySelectorAll('.enroll-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            selectedCourseId = this.dataset.id; // Сохраняем ID выбранного курса
+            document.body.style.overflow = 'hidden';
         });
     });
 
-    // Закрытие всех модальных окон
-    document.querySelectorAll('.btn-close').forEach(button => {
-        button.addEventListener('click', () => {
-            modals.forEach(modal => modal.style.display = 'none');
-        });
+    // Закрытие модального окна
+    document.querySelector('[href="#close"]').addEventListener('click', function() {
+        document.body.style.overflow = 'visible';
     });
 
-    // Закрытие модального окна при клике на фон
-    modals.forEach(modal => {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    });
+    // Обработка отправки формы
+    document.querySelector('.modal form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы
 
-    // Отправка формы и переход к следующему окну
-    forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Предотвращаем стандартное поведение формы
-            const courseId = form.dataset.course;
+        // Меняем текст ссылки для выбранного курса
+        if (selectedCourseId) {
+            const courseLink = document.querySelector(`.enroll-btn[data-id="${selectedCourseId}"]`);
+            courseLink.textContent = 'Ожидайте подтверждения';
+            courseLink.classList.add('disabled'); // Добавляем класс для стилей
+            courseLink.removeAttribute('href'); // Убираем ссылку
+        }
 
-            // Закрываем текущее окно
-            document.getElementById(`modal-enroll-${courseId}`).style.display = 'none';
-
-            // Показываем окно подтверждения
-            const successModal = document.getElementById(`modal-success-${courseId}`);
-            successModal.style.display = 'flex';
-
-            // Блокируем кнопку "Записаться"
-            const button = document.querySelector(`.btn-enroll[data-course="${courseId}"]`);
-            button.textContent = 'Ожидает подтверждения';
-            button.disabled = true;
-        });
+        // Закрываем модальное окно
+        document.querySelector('[href="#close"]').click();
     });
 });

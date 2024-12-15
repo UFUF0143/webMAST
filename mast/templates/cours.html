@@ -4,94 +4,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/styleCours.css' %}">
     <link rel="shortcut icon" href="https://static.tildacdn.com/img/tildafavicon.ico" type="image/x-icon">
     <title>Обучение | Академия MAST</title>
 </head>
 <body>
     <header>
         <section class="header-section">
-
-        </section>
-    </header>
-    <section id="courses" class="courses-section">
-        <div class="courses-conteiner">
-            <div class="courses-text">
-                <h1 class="title-courses">КУРСЫ</h1>
-                <p class="suptitle-courses">В академии MAST представлены три онлайн-курса, которые помогут вам освоить искусство татуировки с нуля или развить существующие навыки.</p>
-            </div>
-            <div class="courses">
-                <!-- Первый курс -->
-                <div class="cours-first">
-                    <img class="imag-background-cours" src="../static/media/background-cours-first.jpeg" alt="">
-                    <div class="cours-left">
-                        <h1 class="title-cours">Первый курс: Мастерство с нуля</h1>
-                        <h1 class="title-cours-master"> Ведущий преподаватель: Максим Пигментов</h1>
-                        <p class="suptitle-cours">Курс для начинающих...</p>
-                        <p class="time-cours">Длительность курса: 6 видеоуроков по 50+ минут.</p>
+            <div class="header-leftside">
+                <div class="header-conteiner-left">
+                    <div class="header-leftside-logo">
+                        <a href="" class="logo"><img class="imag-logo" src="../static/media/logo.png" imgfield="img" alt=""></a>
                     </div>
-                    <div class="cours-right">
-                        <ul class="cours-warp">
-                            <li class="cours-parag">Освоение оборудования</li>
-                            <li class="cours-parag">Гигиена и безопасность</li>
-                            <li class="cours-parag">Создание контура</li>
-                        </ul>
-                        <div class="course-actions">
-                        <!-- Кнопка для записи -->
-                            <button class="btn-enroll" data-course="1">Записаться на курс</button>
-
-                            <!-- Модальное окно для ввода данных -->
-                            <div id="modal-enroll-1" class="modal">
-                                <form class="enroll-form" data-course="1">
-                                    <h2>Запись на курс</h2>
-                                    <label>
-                                        Имя и Фамилия
-                                        <input type="text" name="name" placeholder="Введите имя и фамилию" required>
-                                    </label>
-                                    <label>
-                                        Номер телефона
-                                        <input type="tel" name="phone" placeholder="Введите номер телефона" required>
-                                    </label>
-                                    <label>
-                                        Почта
-                                        <input type="email" name="email" placeholder="Введите почту" required>
-                                    </label>
-                                    <button type="submit">Отправить</button>
-                                    <button type="button" class="btn-close">Закрыть</button>
-                                </form>
-                            </div>
-
-                            <!-- Модальное окно подтверждения -->
-                            <div id="modal-success-1" class="modal">
-                                <div class="modal-content">
-                                    <h2>Поздравляем!</h2>
-                                    <p>Ждите подтверждения администратора.</p>
-                                    <button class="btn-close">Закрыть</button>
-                                </div>
-                            </div>
+                </div>
+            </div>
+                <div class="header-centerside">
+                    <nav class="header-navigation-center">
+                        <a class="nav-aboutus" href="{% url 'home' %}">ГЛАВНАЯ</a>
+                        <a class="nav-account" href="{% url 'login' %}">МОЙ АККАУНТ</a>
+                    </nav>
+                </div>
+                <div class="header-rightside">
+                    <div class="header-conteiner-right">
+                        <div class="phone-and-socials">
+                            <div class="phone-number">+7 (950) 077 92 19</div>
+                            <ul class="socials">
+                                <li class="social-vk">
+                                    <a href="https://vk.com" target="_blank" rel="noopener noreferrer">
+                                        <img src="../static/media/free-icon-vk-2111828.png" alt="VK">
+                                    </a>
+                                </li>
+                                <li class="social-tg">
+                                    <a href="https://t.me" target="_blank" rel="noopener noreferrer">
+                                        <img src="../static/media/free-icon-telegram-logo-87413.png" alt="Telegram">
+                                    </a>
+                                </li>
+                                <li class="social-wa">
+                                    <a href="https://wa.me" target="_blank" rel="noopener noreferrer">
+                                        <img src="../static/media/free-icon-whatsapp-1384023.png" alt="WhatsApp">
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <!-- Второй курс -->
-                <div class="cours-second">
-                    <!-- Остальная информация курса аналогична -->
-                    <div class="course-actions">
-                        <button class="btn-enroll" data-course="2">Записаться на курс</button>
-                        <!-- Модальные окна, как у первого курса -->
-                    </div>
+        </section>
+    </header>
+    <div class="courses-conteiner">
+        <div class="courses-text">
+            <h1 class="title-courses">КУРСЫ</h1>
+            <p class="suptitle-courses">В академии MAST представлены три онлайн-курса, которые помогут вам освоить искусство татуировки с нуля или развить существующие навыки.</p>
+        </div>
+        <div class="courses">
+            <div class="cours-first">
+                <img class="imag-background-cours" src="../static/media/background-cours-first.jpeg" alt="">
+                <div class="cours-left">
+                    <h1 class="title-cours">Первый курс: Мастерство с нуля</h1>
+                    <h1 class="title-cours-master"> Ведущий преподаватель: Максим Пигментов</h1>
+                    <p class="suptitle-cours">Курс для начинающих, где вы изучите основы искусства татуировки с нуля. Подходит для тех, кто только делает первые шаги в профессии. Мы подробно разберем технику работы с оборудованием, основы безопасности и принципы создания простых дизайнов. Вы получите базовые знания, чтобы уверенно начать свой путь в тату-индустрии.</p>
+                    <p class="time-cours">Длительность курса: 6 видеоуроков по 50+ минут.</p>
                 </div>
-                <!-- Третий курс -->
-                <div class="cours-third">
-                    <!-- Остальная информация курса аналогична -->
-                    <div class="course-actions">
-                        <button class="btn-enroll" data-course="3">Записаться на курс</button>
-                        <!-- Модальные окна, как у первого курса -->
-                    </div>
+                <div class="cours-right">
+                    <ul class="cours-warp">
+                        <li class="cours-parag">Освоение оборудования</li>
+                        <li class="cours-parag">Гигиена и безопасность</li>
+                        <li class="cours-parag">Создание контура</li>
+                        <li class="cours-parag">Работа с кожей</li>
+                        <li class="cours-parag">Простые дизайны</li>
+                        <a href="#openModal" class="enroll-btn" data-id="course-1">Записаться на курс</a>
+                    </ul>
+                </div>
+            </div>
+            <div class="cours-second">
+                <img class="imag-background-cours" src="../static/media/background-cours-second.jpeg" alt="">
+                <div class="cours-left">
+                    <h1 class="title-cours">Второй курс: От контуров к шедеврам</h1>
+                    <h1 class="title-cours-master"> Ведущий преподаватель: Виктор Альва</h1>
+                    <p class="suptitle-cours">Курс для мастеров среднего уровня, которые хотят углубить свои знания и освоить более сложные техники. Здесь вы научитесь работать с объемом, создавать плавные переходы и улучшать качество линий. Курс включает практические занятия, позволяющие отточить мастерство и уверенно выполнять сложные элементы.</p>
+                    <p class="time-cours">Длительность курса: 6 видеоуроков по 50+ минут.</p>
+                </div>
+                <div class="cours-right">
+                    <ul class="cours-warp">
+                        <li class="cours-parag">Техника теней</li>
+                        <li class="cours-parag">Детализация</li>
+                        <li class="cours-parag">Работа с цветом</li>
+                        <li class="cours-parag">Исправление ошибок</li>
+                        <li class="cours-parag">Проработка сложных эскизов</li>
+                        <a href="#openModal" class="enroll-btn" data-id="course-2">Записаться на курс</a>
+                    </ul>
+                </div>
+            </div>
+            <div class="cours-third">
+                <img class="imag-background-cours" src="../static/media/background-cours-third.jpeg" alt="">
+                <div class="cours-left">
+                    <h1 class="title-cours">Третий курс: Искусство на коже</h1>
+                    <h1 class="title-cours-master"> Ведущий преподаватель: Екатерина Филина</h1>
+                    <p class="suptitle-cours">Курс для профессионалов, которые хотят выйти на новый уровень мастерства. Программа сфокусирована на уникальных авторских стилях, сложных композициях и проработке больших проектов. Вы научитесь создавать сложные художественные работы, которые станут визитной карточкой вашего стиля.</p>
+                    <p class="time-cours">Длительность курса: 6 видеоуроков по 50+ минут.</p>
+                </div>
+                <div class="cours-right">
+                    <ul class="cours-warp">
+                        <li class="cours-parag">Авторский стиль</li>
+                        <li class="cours-parag">Композиция и масштаб</li>
+                        <li class="cours-parag">Реалистичные детали</li>
+                        <li class="cours-parag">Работа с клиентом</li>
+                        <li class="cours-parag">Портфолио профессионала</li>
+                        <a href="#openModal" class="enroll-btn" data-id="course-3">Записаться на курс</a>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <div id="openModal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Запись</h3>
+              <a href="#close" title="Close" class="close">×</a>
+            </div>
+
+            <body class="body-author">
+   
+                <div class="wrapper">
+                    <h2>Укажите всю нужную информацию, чтобы мы могли отправить вам весь курс и подарок в виде тату набораю</h2>
+                    <form action="">
+                        <div class="input-box">
+                            <input type="text" placeholder='Имя и фамилия' required>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder='Номер телефона' required>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder='Email' required>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder='Город' required>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder='Адрес проживания' required>
+                        </div>
+                        
+                        <button type='submit' class="btn">Отправить</button>
+                    </form>
+                </div>
+          </div>
+        </div>
+      </div>
+      
+    {% block extrahead %}
     <script src="{% static 'scripts/enroll.js' %}"></script>
-    
+    {% endblock extrahead %}
+
+    <footer>
+        <section class="footer-section">
+            <div class="footer-conteiner">
+                <div class="footer-top">
+                    <div class="footer-conection">
+                        <h1 class="title-con">Связаться с нами</h1>
+                        <a class="nav" href="#about">Вконтакте</a>
+                        <a class="nav" href="#masters">Telegram</a>
+                        <a class="nav" href="#courses">WhatsApp</a>
+                        <div class="phone-number-footer">+7 (950) 077 92 19</div>
+                    </div>
+                    <div class="footer-address">
+                        <h1 class="title-address">Наш главный офис</h1>
+                        <p class="suptitle-address">г. Владивосток, Проспект Красного Знамени, д. 133/3</p>
+                    </div>
+                    <div class="logo-footer">
+                        <a href="" class="logo"><img class="imag-logo" src="../static/media/logo.png" imgfield="img" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
 </body>
 </html>
