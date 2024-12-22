@@ -6,54 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
     <link rel="shortcut icon" href="https://static.tildacdn.com/img/tildafavicon.ico" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Академия MAST</title>
     
 </head>
 <body>
-    <header>
-        <section class="header-section">
-            <div class="header-leftside">
-                <div class="header-conteiner-left">
-                    <div class="header-leftside-logo">
-                        <a href="" class="logo"><img class="imag-logo" src="../static/media/logo.png" imgfield="img" alt=""></a>
-                    </div>
-                </div>
-            </div>
-                <div class="header-centerside">
-                    <nav class="header-navigation-center">
-                        <a class="nav-aboutus" href="#about">О НАС</a>
-                        <a class="nav-masters" href="#masters">МАСТЕРА</a>
-                        <a class="nav-courses" href="#courses">КУРСЫ</a>
-                        <a class="nav-app" href="{% url 'courses' %}">ОБУЧЕНИЕ</a>
-                        <a class="nav-account" href="{% url 'login' %}">МОЙ АККАУНТ</a>
-                    </nav>
-                </div>
-                <div class="header-rightside">
-                    <div class="header-conteiner-right">
-                        <div class="phone-and-socials">
-                            <div class="phone-number">+7 (950) 077 92 19</div>
-                            <ul class="socials">
-                                <li class="social-vk">
-                                    <a href="https://vk.com" target="_blank" rel="noopener noreferrer">
-                                        <img src="../static/media/free-icon-vk-2111828.png" alt="VK">
-                                    </a>
-                                </li>
-                                <li class="social-tg">
-                                    <a href="https://t.me" target="_blank" rel="noopener noreferrer">
-                                        <img src="../static/media/free-icon-telegram-logo-87413.png" alt="Telegram">
-                                    </a>
-                                </li>
-                                <li class="social-wa">
-                                    <a href="https://wa.me" target="_blank" rel="noopener noreferrer">
-                                        <img src="../static/media/free-icon-whatsapp-1384023.png" alt="WhatsApp">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-        </section>
-    </header>
+    <header class="header">
+		<a href="#" class="logo">MAST</a>
+
+		<input type="checkbox" id='check'>
+		<label for='check' class='icons'>
+			<i class='bx bx-menu' id='menu-icon'></i>
+			<i class='bx bx-x' id='close-icon'></i>
+		</label>
+
+		<nav class="navbar">
+			<a href="#about" style='--i:0'>О НАС</a>
+			<a href="#masters" style='--i:1'>МАСТЕРА</a>
+			<a href="#courses" style='--i:2'>КУРСЫ</a>
+			<a href="{% url 'courses' %}" style='--i:3'>ОБУЧЕНИЕ</a>
+			<a href="{% url 'login' %}" style='--i:4'>МОЙ АККАУНТ</a>
+		</nav>
+	</header>
+    
     <section class="greetings-section">
         <div class="greetings-conteiner">
             <div class="text_greet">
@@ -63,14 +38,9 @@
         </div>
     </section>
     <section id="about" class="about-section">
-        <div class="about-conteiner">
-            <div class="about-text">
-                <h1 class="title-about">О НАС</h1>
-                <p class="suptitle-about">АКАДЕМИЯ MAST — это современная онлайн-платформа для обучения искусству татуировки. Мы предлагаем три уникальных курса, которые подойдут как начинающим мастерам, так и тем, кто хочет углубить свои профессиональные знания. Наша миссия — сделать обучение доступным, качественным и увлекательным.</p>
-            </div>
-            <div class="about-imag">
-                <img class="img-about" src="../static/media/imag_about.jpeg" alt="">
-            </div>
+        <div class="about-container">
+            <h1 class="title-about">О НАС</h1>
+            <p class="suptitle-about">АКАДЕМИЯ MAST — это современная онлайн-платформа для обучения искусству татуировки. Мы предлагаем три уникальных курса, которые подойдут как начинающим мастерам, так и тем, кто хочет углубить свои профессиональные знания. Наша миссия — сделать обучение доступным, качественным и увлекательным.</p>
         </div>
     </section>
     <section id="masters" class="masters-section">
@@ -208,9 +178,6 @@
                         <h1 class="title-address">Наш главный офис</h1>
                         <p class="suptitle-address">г. Владивосток, Проспект Красного Знамени, д. 133/3</p>
                     </div>
-                    <div class="logo-footer">
-                        <a href="" class="logo"><img class="imag-logo" src="../static/media/logo.png" imgfield="img" alt=""></a>
-                    </div>
                 </div>
                 <div class="footer-center">
                     <hr>
@@ -225,5 +192,8 @@
             </div>
         </section>
     </footer>
+    {% block extrahead %}
+    <script src="{% static 'scripts/scriptIndex.js' %}"></script>
+    {% endblock extrahead %}
 </body>
 </html>

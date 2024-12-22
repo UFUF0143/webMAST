@@ -35,76 +35,134 @@ h1{
 }
 
 
-.header-section {
-    display: flex; /* Устанавливает flex-контейнер */
-    justify-content: space-between; /* Разделяет элементы по горизонтали */
-    align-items: center; /* Выравнивает элементы по вертикали */
-    padding: 10px 30px; /* Отступы внутри header */
+
+
+.header {
+    box-sizing: border-box;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 1.3rem 10%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
     
 }
 
-.header-leftside, 
-.header-centerside, 
-.header-rightside {
-    display: flex; /* Делаем содержимое каждого блока flex-элементами */
-    align-items: center; /* Выравниваем по вертикали */
+.header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .1);
+	backdrop-filter: blur(50px);
+	z-index: -1;
 }
 
-.header-navigation-center {
-    display: flex; /* Горизонтальный список ссылок */
-    gap: 20px; /* Расстояние между ссылками */
+.header::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent,  rgba(255, 255, 255, .4), transparent);
+	transition: .6s;
 }
 
-.header-navigation-center a {
-    text-decoration: none; /* Убираем подчеркивание у ссылок */
-    color: black; /* Цвет текста */
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s ease; /* Анимация при наведении */
+.header:hover::after {
+	left: 100%;
 }
 
-.header-navigation-center a:hover {
-    color: #068a9d; /* Изменение цвета при наведении */
+.logo {
+	font-size: 2rem;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
 }
 
-.header-rightside {
-    display: flex; /* Гибкий контейнер для элементов справа */
-    align-items: center; /* Вертикальное выравнивание */
+.navbar a {
+	font-size: 1.15rem;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
+	margin-right: 2.5rem;
 }
 
-.phone-and-socials {
-    display: flex; /* Расположение номера и соцсетей в одну строку */
-    align-items: center; /* Выравнивание по вертикали */
-    gap: 15px; /* Расстояние между номером телефона и соцсетями */
+#check {
+	display: none;
+
 }
 
-.phone-number {
-    font-size: 16px;
-    color: #333;
+.icons {
+	right: 5%;
+	position: absolute;
+	font-size: 2.8rem;
+	color: #fff;
+	cursor: pointer;
+	display: none;
 }
 
-.socials {
-    display: flex; /* Иконки соцсетей в одну строку */
-    gap: 10px; /* Расстояние между иконками */
-    list-style: none; /* Убираем маркеры списка */
-    padding: 0;
-    margin: 0;
+@media (max-width: 992px) {
+	.header {
+		padding: 1.3rem 5%;
+	}
 }
 
-.socials img {
-    width: 30px; /* Размер иконок */
-    height: 30px;
-    transition: transform 0.3s ease; /* Анимация при наведении */
-}
+@media (max-width: 768px) {
+	.icons {
+		display: inline-flex;
+	}
 
-.socials img:hover {
-    transform: scale(1.1); /* Увеличение иконки при наведении */
-}
+	#check:checked~.icons #menu-icon {
+		display: none;
+	}
 
-.imag-logo{
-    width: 200px;
-}
+	.icons #close-icon {
+		display: none;
+	}
 
+	#check:checked~.icons #close-icon {
+		display: block;
+	}
+
+	.navbar {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 0;
+		background: rgba(0, 0, 0, .1);
+		backdrop-filter: blur(50px);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1);
+		overflow: hidden;
+		transition: .3s ease;
+	}
+
+	#check:checked~.navbar {
+		height: 17.7rem;
+	}
+
+	.navbar a {
+		display: block;
+		font-size: 1.1rem;
+		margin: 1.5rem 0;
+		text-align: center;
+		opacity: 0;
+		transform: translateY(-50px);
+		transition: .3s ease;
+	}
+
+	#check:checked~.navbar a {
+		opacity: 1;
+		transform: translateY(0);
+		transition-delay: calc(.15s * var(--i));
+	}
+}
 
 
 
@@ -112,7 +170,7 @@ h1{
 .greetings-section {
     position: relative;
     width: 100%;
-    height: 700px;
+    height: 800px;
     overflow: hidden;
 }
 
@@ -139,61 +197,63 @@ h1{
     font-size: 68px;
     font-weight: bold;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень для лучшей читаемости */
+
+}
+.text_greet{
+    padding: 0 30px;
+}
+@media (max-width: 720px) {
+    .text_greet .title_greet {
+        font-size: 50px;
+    }
+}
+@media (max-width: 540px) {
+    .text_greet .title_greet {
+        font-size: 40px;
+    }
+}
+@media (max-width: 450px) {
+    .text_greet .title_greet {
+        font-size: 30px;
+    }
 }
 
 
 
 
 
-.about-sectoin {
-    position: relative; /* Для размещения текста поверх картинки */
+
+.about-section {
     padding: 30px;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Текст остается в верхней части */
+    align-items: center; /* Центрируем содержимое */
+    background-image: url("../media/imag_about.jpeg"); /* Задний фон */
+    background-size: cover; /* Масштабируем фон, чтобы покрыть всю область */
+    background-position: center; /* Центрируем фон */
+    background-repeat: no-repeat; /* Убираем повторение фона */
+    height: auto;
+    margin-bottom: 120px;
 }
 
-.about-conteiner {
-    position: relative; /* Устанавливаем родительский контейнер как область для позиционирования */
+.about-container {
     width: 100%;
-    max-height: 1000px;
-    height: 100%;
-    margin-bottom: 100px;
-}
-
-.about-imag {
-    position: relative;
-}
-
-.img-about {
-    display: flex;
-    justify-content: center; /* Центрируем изображение горизонтально */
-    align-items: center; /* Центрируем вертикально (если нужно) */
-    width: 100%;
-    margin: 0 auto; /* Устанавливаем автоматические отступы для выравнивания */
-    max-width: 1400px; /* Максимальная ширина изображения */
-    margin-top: 20px;
-}
-
-.about-text {
-    position: absolute; /* Абсолютное позиционирование текста */
-    margin-top: 30px; /* Расстояние от верхнего края */
-    margin-left: 50px; /* Расстояние от левого края */
-    max-width: 800px; /* Ограничение ширины текста */
-    z-index: 2; /* Размещаем текст поверх изображения */
+    max-width: 1200px;
+    margin:  120px auto;
+    background: rgba(255, 255, 255, 0.6); /* Полупрозрачный белый фон для читаемости текста */
 }
 
 .title-about {
-    font-size: 2rem; /* Размер заголовка */
+    font-size: 32px; /* Крупный размер заголовка */
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .suptitle-about {
-    font-size: 1rem; /* Размер подзаголовка */
-    line-height: 1.5;
-    font-size: 24px;
+    font-size: 24px; /* Размер подзаголовка */
+    line-height: 1.8;
 }
+
 
 
 
@@ -208,27 +268,35 @@ h1{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 120px;
-
+    
 }
 
-.masters-conteiner {
+.masters-container {
     max-width: 1200px;
     width: 100%;
     text-align: center;
 }
 
 .masters-text {
+    max-width: 1200px;
+    padding: 0 30px;
     margin-bottom: 60px;
+    
 }
 
 .title-masters {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 30px;
+    display: flex;
+    text-align: center;
+}
+.title-masters h1 {
+    display: flex;
+    text-align: center;
 }
 
 .suptitle-masters {
     font-size: 24px;
-    padding: 0 80px;
     
 }
 
@@ -236,28 +304,30 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Элементы переносятся на следующую строку при необходимости */
 }
 
 .list-masters {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap; /* Элементы переносятся */
+    justify-content: center; /* Центрируем элементы */
     align-items: flex-start;
-    gap: 100px;
+    gap: 150px; /* Расстояние между карточками */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .list-masters li {
-    flex: 1;
+    flex: 1 1 calc(33.333% - 20px); /* Три колонки в строке */
+    max-width: 300px; /* Максимальная ширина карточки */
     text-align: center;
 }
 
 .imag-master {
-    width: 300px; /* Уменьшение размера изображений */
-    height: 300px;
+    width: 100%;
+    height: auto; /* Сохраняем пропорции изображения */
     border-radius: 10%;
-    
     margin-bottom: 10px;
 }
 
@@ -273,7 +343,37 @@ h1{
     text-align: justify;
     font-size: 16px;
     line-height: 1.4;
-    padding: 0 10px;
+    
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .list-masters li {
+        flex: 1 1 calc(50% - 20px); /* Две колонки на планшетах */
+    }
+
+    .suptitle-masters {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .list-masters li {
+        flex: 1 1 100%; /* Одна колонка на мобильных устройствах */
+    }
+
+    .title-masters {
+        font-size: 28px; /* Уменьшение размера заголовка */
+    }
+
+    .suptitle-masters {
+        font-size: 18px;
+    }
+
+    .name-master {
+        font-size: 18px;
+    }
+
 }
 
 
@@ -282,13 +382,12 @@ h1{
 
 /* Общие стили для секции */
 .courses-section {
-    padding: 50px 20px;
+    padding: 50px 30px;
 }
 
 .courses-conteiner {
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
 }
 
 /* Заголовок и подзаголовок */
@@ -298,21 +397,20 @@ h1{
 
 .title-courses {
     font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .suptitle-courses {
     font-size: 24px;
     line-height: 1.6;
-    max-width: 1000px;
-    margin: 0 auto;
+    
 }
 
 /* Стили для первого курса */
 .cours-first {
     position: relative;
-    max-height: 500px;
+    min-height: 500px;
+    height: 100%;
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -321,7 +419,8 @@ h1{
 }
 .cours-second {
     position: relative;
-    max-height: 500px;
+    min-height: 500px;
+    height: 100%;
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -330,7 +429,8 @@ h1{
 }
 .cours-third {
     position: relative;
-    max-height: 500px;
+    min-height: 500px;
+    height: 100%;
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -406,12 +506,72 @@ h1{
     font-size: 20px;
 }
 
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .title-courses {
+        font-size: 32px;
+    }
+
+    .suptitle-courses {
+        font-size: 20px;
+    }
+
+    .cours-first, .cours-second, .cours-third {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .cours-left, .cours-right {
+        padding: 20px;
+    }
+
+    .cours-parag {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-courses {
+        font-size: 28px;
+    }
+
+    .suptitle-courses {
+        font-size: 18px;
+    }
+
+    .cours-left, .cours-right {
+        padding: 15px;
+    }
+
+    .cours-parag {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-courses {
+        font-size: 24px;
+    }
+
+    .suptitle-courses {
+        font-size: 16px;
+    }
+
+    .cours-left, .cours-right {
+        padding: 10px;
+    }
+
+    .cours-parag {
+        font-size: 14px;
+    }
+}
+
 
 
 
 
 .present-section {
-    padding: 50px 20px;
+    padding: 50px 30px;
 }
 
 .present-conteiner {
@@ -424,15 +584,15 @@ h1{
 }
 
 .text-present {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px 30px;
+    
+    width: 100%;
+    
+    padding: 20px 0;
 }
 
 .title-present {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 32px;
+    margin-bottom: 30px;
 }
 
 .suptitle-present {
@@ -471,6 +631,7 @@ h1{
     color: #007BFF;
     margin-right: 10px;
     font-size: 1.2rem;
+    
 }
 
 .suptitle-kit {
@@ -487,6 +648,79 @@ h1{
     
 }
 
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .title-present {
+        font-size: 28px;
+    }
+    .title-kit {
+        font-size: 28px;
+    }
+
+    .suptitle-present {
+        font-size: 18px;
+    }
+
+    .kit-present {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+
+    .imag-kit {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-present {
+        font-size: 24px;
+    }
+    .title-kit {
+        font-size: 28px;
+    }
+
+    .suptitle-present {
+        font-size: 16px;
+    }
+
+    .text-kit {
+        
+        margin-bottom: 20px;
+    }
+
+    .elements-kit {
+        font-size: 18px;
+    }
+
+    .imag-kit {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-present {
+        font-size: 20px;
+    }
+    .title-kit {
+        font-size: 28px;
+    }
+
+    .suptitle-present {
+        font-size: 14px;
+    }
+
+    .elements-kit {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .imag-kit {
+        max-width: 250px;
+    }
+}
+
 
 
 
@@ -495,7 +729,7 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
     height: 100%;
     margin-bottom: 50px;
 
@@ -508,13 +742,13 @@ h1{
 }
 
 .title-record {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 30px;
 }
 
 .but-record {
-    font-size: 1.5rem;
+    font-size: 24px;
     padding: 15px 40px;
     border: 3px solid #6a11cb; /* Фиолетовый бордер */
     border-radius: 50px;
@@ -527,6 +761,16 @@ h1{
     transform: scale(1.1); /* Легкое увеличение */
     box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3); /* Тень при наведении */
 }
+@media (max-width: 768px) {
+    .title-record {
+        font-size: 24px;
+    }
+    .but-record {
+        font-size: 16px;
+    }
+
+}
+
 
 
 
@@ -589,13 +833,6 @@ footer {
 }
 
 
-.logo-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 .footer-center hr {
     border: 0;
     height: 2px;
@@ -621,3 +858,9 @@ footer {
     color: white;
 }
 
+@media (max-width: 430px) {
+    .footer-bottom {
+        flex-wrap: wrap;
+
+    }
+}
