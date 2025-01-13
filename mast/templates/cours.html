@@ -102,23 +102,61 @@
                 <div class="wrapper">
                     <h2>Укажите всю нужную информацию, чтобы мы могли отправить вам весь курс и подарок в виде тату набора.</h2>
                     <form action="">
+                
+                        <!-- Имя -->
                         <div class="input-box">
-                            <input type="text" placeholder='Имя и фамилия' required>
+                            <input 
+                                type="text" 
+                                name="first_name" 
+                                placeholder="Имя" 
+                                pattern="[А-ЯЁ][а-яё]+" 
+                                title="Имя должно быть написано на русском языке с заглавной буквы." 
+                                required
+                            >
                         </div>
+                
+                        <!-- Фамилия -->
                         <div class="input-box">
-                            <input type="text" placeholder='Номер телефона' required>
+                            <input 
+                                type="text" 
+                                name="last_name" 
+                                placeholder="Фамилия" 
+                                pattern="[А-ЯЁ][а-яё]+" 
+                                title="Фамилия должна быть написана на русском языке с заглавной буквы." 
+                                required
+                            >
                         </div>
+                
+                         <!-- Номер телефона -->
+                         <div class="input-box">
+                            <label for="phone"></label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="Номер телефона" 
+                                required
+                            >
+                        </div>
+                
+                        <!-- Город -->
                         <div class="input-box">
-                            <input type="text" placeholder='Email' required>
+                            <input type="text" id="cityInput" placeholder="Введите название города">
+                            <div id="suggestions" class="suggestions"></div>
                         </div>
+                
+                        <!-- Адрес проживания -->
                         <div class="input-box">
-                            <input type="text" placeholder='Город' required>
+                            <input 
+                                type="text" 
+                                name="address" 
+                                placeholder="Адрес проживания" 
+                                required
+                            >
                         </div>
-                        <div class="input-box">
-                            <input type="text" placeholder='Адрес проживания' required>
-                        </div>
-                        
-                        <button type='submit' class="btn">Отправить</button>
+                
+                        <!-- Кнопка отправки -->
+                        <button type="submit" class="btn">Отправить</button>
                     </form>
                 </div>
           </div>

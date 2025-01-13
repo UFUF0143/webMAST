@@ -28,6 +28,10 @@ html {
 body {
     -ms-overflow-style: none; /* Скрывает полосу прокрутки в Internet Explorer */
 }
+.form-control textarea {
+    resize: none;
+    height: 150px; /* Высота текстового поля */
+}
 .footer-account{
     display: flex;
     flex-direction: row;
@@ -192,6 +196,67 @@ option{
 .alert-warning a:hover{
     color: white;
 }
+.form-group input::placeholder {
+	color: #c7c7c7;
+}
+
+.form-group textarea::placeholder {
+	color: #c7c7c7;
+}
+
+
+.suggestions {
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    z-index: 1000;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions div:hover {
+    background-color: hsl(221, 36%, 65%);
+}
+.input-box input {
+	
+    width: 100%;
+	height: calc(1.5em + .75rem + 2px);
+    margin-bottom: 1rem;
+	background: transparent;
+	outline: none;
+	border: none;
+	border: 2px solid rgba(255, 255, 255, .2);
+	border-radius: 40px;
+	font-size: 16px;
+	color: white;
+	padding-left: 12px;
+}
+
+.input-box input::placeholder {
+	color: #c7c7c7;
+}
+label.btn.btn-outline-primary{
+    color: #ffffff;
+    border-color: #ffffff;
+}
+label.btn.btn-outline-primary:hover {
+    background-color: rgba(133, 54, 218); /* Тень при наведении */
+}
+
+.input-box i {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+}
+
 
 @media (max-width: 330px) {
     .font-weight-bold.py-3.mb-4{

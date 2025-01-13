@@ -147,3 +147,25 @@ body {
 .title-login{
     font-weight: bold;
 }
+.agree{
+	width: 100%;
+	margin-bottom: 30px;
+}
+.boxinfo{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 14px;
+	color: #fff;
+}
+
+.box{
+	width: 20px;
+	margin-right: 10px; 
+	accent-color: #fff;
+}
+.infotext{
+	color: #fff; 
+	text-decoration: underline; 
+	margin-left: 5px;
+}

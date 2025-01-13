@@ -289,7 +289,24 @@ body {
     color: white;
     font-size: 20px;
 }
+.suggestions {
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    z-index: 1000;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+}
 
+.suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions div:hover {
+    background-color: hsl(221, 36%, 65%);
+}
 /* Адаптивные стили */
 @media (max-width: 1024px) {
     .title-courses {
