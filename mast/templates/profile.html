@@ -28,11 +28,14 @@
                         <a class="list-group-item list-group-item-action active" data-toggle="list"
                             href="#account-general">Основные</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-cours">Обучение</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-change-password">Изменение пароля</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-info">Данные</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-notifications">Уведомления</a>
+                        
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -105,6 +108,68 @@
                                     </div>
                                 </div>
 
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="account-cours">
+                            <div class="card-body pb-2">
+                                <h5 class="mb-3">Мои курсы</h5>
+                                <div id="courses-list" class="list-group">
+                                    <!-- Пример курса -->
+                                    <div class="list-group-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Первый курс: Мастерство с нуля</h6>
+                                                <h6 class="mb-1">Ведущий преподаватель: Максим Пигментов</h6>
+                                                
+                                                <span class="badge badge-secondary">Не пройден</span>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="list-group-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Второй курс: От контуров к шедеврам</h6>
+                                                <h6 class="mb-1">Ведущий преподаватель: Виктор Альва</h6>
+                                                <span class="badge badge-warning">Ожидает подтверждения</span>
+                                            </div>
+                                            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmationModal">Отказаться</button>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="list-group-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Третий курс: Искусство на коже</h6>
+                                                <h6 class="mb-1">Ведущий преподаватель: Екатерина Филина</h6>
+                                                <span class="badge badge-success">Пройден</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Модальное окно подтверждения -->
+                        <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="confirmationModalLabel">Подтвердите действие</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Вы уверены, что хотите отказаться от записи на курс?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                                        <button type="button" class="btn btn-danger" id="confirmDecline">Да, отказаться</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
@@ -180,6 +245,7 @@
                             <div class="card-body pb-2">
                                 <div class="form-group">
                                     <div class="input-box">
+                                        <label class="form-label">Номер телефона</label>
                                         <label for="phone"></label>
                                         <input 
                                             type="tel" 
@@ -215,7 +281,26 @@
         </div>
         <div class="text-right mt-3">
             <button type="button" class="btn btn-primary">Сохранить изменения</button>&nbsp;
-            <button type="button" class="btn btn-default">Отмена</button>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#logoutConfirmationModal">Выйти из аккаунта</button>
+        </div>
+        <div class="modal fade" id="logoutConfirmationModal" tabindex="-1" aria-labelledby="logoutConfirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="logoutConfirmationModalLabel">Подтвердите выход</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Вы уверены, что хотите выйти из аккаунта?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                        <a href="{% url 'login' %}" class="btn btn-danger" id="confirmLogout">Да, выйти</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     {% block extrahead %}

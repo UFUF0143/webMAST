@@ -151,3 +151,17 @@ document.addEventListener("click", (event) => {
         suggestions.innerHTML = "";
     }
 });
+
+
+
+
+document.getElementById('confirmDecline').addEventListener('click', function () {
+    // Здесь будет логика смены статуса на "Не пройден"
+    const courseElement = document.querySelector('#courses-list .list-group-item:nth-child(2)');
+    const badge = courseElement.querySelector('.badge');
+    badge.textContent = 'Не пройден';
+    badge.classList.remove('badge-warning');
+    badge.classList.add('badge-secondary');
+    courseElement.querySelector('button').remove();
+    $('#confirmationModal').modal('hide');
+});
